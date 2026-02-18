@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FULL BACKGROUND */
+body {
+    min-height: 100vh;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg,
+            #013220 0%,
+            #025c3a 50%,
+            #0a8f4f 100%);
+    z-index: -1;
+}
+
+/* 🌙 MOON */
+.moon {
+    position: absolute;
+    top: 6%;
+    right: 6%;
+    width: 10vw;
+    height: 10vw;
+    max-width: 120px;
+    max-height: 120px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+}
+
+.moon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 100%;
+    height: 100%;
+    background: #013220;
+    border-radius: 50%;
+}
+
+/* ✨ STARS */
+.stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 70% 60%, white, transparent),
+        radial-gradient(2px 2px at 40% 80%, white, transparent),
+        radial-gradient(2px 2px at 90% 20%, white, transparent),
+        radial-gradient(2px 2px at 10% 70%, white, transparent),
+        radial-gradient(2px 2px at 50% 50%, white, transparent),
+        radial-gradient(2px 2px at 80% 40%, white, transparent);
+    animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Logo */
+.logo img {
+    height: 6vh;
+    max-height: 70px;
+    width: auto;
+}
+
+/* Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: gold;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+}
+
+.close-btn {
+    display: none;
+}
+
+.naat-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+
+.naat-card {
+    background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00);
+    color: #0a8f4f;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 10px;
+    transition: 0.3s;
+}
+
+.naat-card:hover {
+    transform: scale(1.05);
+}
+
+.naat-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.naat-card h3 {
+    margin: 10px 0;
+    /* font-size: 16px; */
+}
+
+.play-btn {
+    display: inline-block;
+    background: linear-gradient(180deg, #013220, #025c3a);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.play-btn:hover {
+    background: #0a8f4f;
+}
+
+
+.site-footer {
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #013220, #025c3a, #0a8f4f);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('./assets/stars.png') repeat;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content h3 {
+    font-size: 28px;
+    color: gold;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px gold;
+}
+
+.footer-content p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-content .author-name {
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 5px #ffd700;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons .linkedin:hover {
+    color: #0A66C2;
+    transform: scale(1.2);
+}
+
+.social-icons .github:hover {
+    color: #181717;
+    transform: scale(1.2);
+}
+
+.social-icons .facebook:hover {
+    color: #1877F2;
+    transform: scale(1.2);
+}
+
+
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -50%;
+        width: 50%;
+        height: 50vh;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px 0 0 15px;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 20px 0;
+        transition: right 0.4s ease;
+        z-index: 20;
+    }
+
+    /* Active state (open sidebar) */
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: gold;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        z-index: 30;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+    }
+
+    .nav-links .close-btn {
+        display: block;
+        align-self: flex-end;
+        padding: 10px 20px;
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+        margin-bottom: 30px;
+    }
+
+    /* Hover effect */
+    .nav-links .close-btn:hover {
+        color: gold;
+    }
+
+    .naat-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content h3 {
+        font-size: 24px;
+    }
+
+    .footer-content p {
+        font-size: 14px;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+    }
+}

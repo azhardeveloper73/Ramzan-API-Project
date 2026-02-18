@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <title>Ramadan Mubarak</title>
+
+</head>
+</head>
+
+<body>
+    <!-- BACKGROUND -->
+    <div class="background">
+        <div class="moon"></div>
+        <div class="stars"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./assets/ramadan-logo.svg" alt="">
+        </div>
+
+        <ul class="nav-links">
+            <li class="close-btn">✖</li>
+            <li><a href="#" class="nav-page">Home</a></li>
+            <li><a href="./naat/naat.html" class="nav-page">Naat</a></li>
+            <li><a href="./Quran Pak/pak.html" class="nav-page">Quran Pak</a></li>
+            <li><a href="./About us/about.html" class="nav-page">About Us</a></li>
+        </ul>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="fancy-ramadan-logo">
+        <h1 class="arabic-logo">رمضان كريم</h1>
+    </section>
+
+
+    <!-- RAMADAN TABLE -->
+    <section class="ramadan-table-section">
+        <div class="ramadan-card">
+
+            <div class="table-header">
+                <div>Roza</div>
+                <div>Date</div>
+                <div>Day</div>
+                <div>Sehri</div>
+                <div>Iftar</div>
+            </div>
+
+            <div id="ramadan-data"></div>
+
+        </div>
+    </section>
+
+    <!-- DUAS SECTION -->
+    <section class="ramadan-duas">
+        <div class="dua-card">
+            <h2 class="dua-title">سحری کی دعا</h2>
+            <p class="dua-text">
+                وَبِصَوْمِ غَدٍ نَّوَيْتُ مِنْ شَهْرِ رَمَضَانَ
+            </p>
+        </div>
+
+        <div class="dua-card">
+            <h2 class="dua-title">افطار کی دعا</h2>
+            <p class="dua-text">
+                اللَّهُمَّ إِنِّي لَكَ صُمْتُ وَبِكَ آمَنْتُ وَعَلَيْكَ تَوَكَّلْتُ وَعَلَىٰ رِزْقِكَ أَفْطَرْتُ
+            </p>
+        </div>
+    </section>
+
+    <!-- TASBEEH COUNTER -->
+    <section class="tasbeeh-section">
+        <div class="tasbeeh-card">
+            <h2 class="tasbeeh-title">تسبیح</h2>
+
+            <input type="text" id="tasbeeh-input" placeholder="جو آپ پڑھنا چاہتے ہیں یہاں لکھیں" />
+
+            <div class="tasbeeh-display">
+                <p id="tasbeeh-name">---</p>
+                <p id="tasbeeh-count">0</p>
+            </div>
+
+            <div class="tasbeeh-buttons">
+                <button id="tasbeeh-increase">+</button>
+                <button id="tasbeeh-decrease">-</button>
+                <button id="tasbeeh-reset">ری سیٹ کریں</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- wall-clocks -->
+    <section class="wall-clocks">
+        <h2 class="clocks-title">آج کے نماز کے اوقات</h2>
+        <div class="clocks-container">
+            <div class="clock-card">
+                <h3>Fajr</h3>
+                <canvas id="fajr-clock" class="clock-canvas"></canvas>
+                <p id="fajr-time">00:00 AM</p>
+            </div>
+
+            <div class="clock-card">
+                <h3>Dhuhr</h3>
+                <canvas id="dhuhr-clock" class="clock-canvas"></canvas>
+                <p id="dhuhr-time">00:00 PM</p>
+            </div>
+
+            <div class="clock-card">
+                <h3>Asr</h3>
+                <canvas id="asr-clock" class="clock-canvas"></canvas>
+                <p id="asr-time">00:00 PM</p>
+            </div>
+
+            <div class="clock-card">
+                <h3>Maghrib</h3>
+                <canvas id="maghrib-clock" class="clock-canvas"></canvas>
+                <p id="maghrib-time">00:00 PM</p>
+            </div>
+
+            <div class="clock-card">
+                <h3>Isha</h3>
+                <canvas id="isha-clock" class="clock-canvas"></canvas>
+                <p id="isha-time">00:00 PM</p>
+            </div>
+
+            <div class="clock-card">
+                <h3>Current Time</h3>
+                <canvas id="current-clock" class="clock-canvas"></canvas>
+                <p id="current-time">00:00:00</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <h3>رمضان مبارک 🌙</h3>
+            <p>Website by <span class="author-name">Azhar Vayani</span></p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/azhar-developer-7971a6388/" target="_blank" class="linkedin"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/azhardeveloper73" target="_blank" class="github"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.facebook.com/Azuu.vayani" target="_blank" class="facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="first.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<svg width="420" height="90" viewBox="0 0 420 90" 
+       preserveAspectRatio="xMidYMid meet"
+       xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#FFD700"/>
+        <stop offset="100%" stop-color="#FFA500"/>
+      </linearGradient>
+    </defs>
+    <circle cx="45" cy="45" r="30" fill="url(#goldGradient)" />
+    <circle cx="60" cy="45" r="30" fill="#014421" />
+    <text x="105" y="55"
+          font-family="Segoe UI, Arial, sans-serif"
+          font-size="32"
+          fill="url(#goldGradient)"
+          font-weight="bold">
+      Ramadan Mubarak
+    </text>
+  </svg>

@@ -1,0 +1,644 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FULL BACKGROUND */
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg,
+      #013220 0%,
+      #025c3a 50%,
+      #0a8f4f 100%);
+  z-index: -1;
+}
+
+/* 🌙 MOON */
+.moon {
+  position: absolute;
+  top: 6%;
+  right: 6%;
+  width: 10vw;
+  height: 10vw;
+  max-width: 120px;
+  max-height: 120px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+}
+
+.moon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 100%;
+  height: 100%;
+  background: #013220;
+  border-radius: 50%;
+}
+
+/* ✨ STARS */
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 70% 60%, white, transparent),
+    radial-gradient(2px 2px at 40% 80%, white, transparent),
+    radial-gradient(2px 2px at 90% 20%, white, transparent),
+    radial-gradient(2px 2px at 10% 70%, white, transparent),
+    radial-gradient(2px 2px at 50% 50%, white, transparent),
+    radial-gradient(2px 2px at 80% 40%, white, transparent);
+  animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Logo */
+.logo img {
+  height: 6vh;
+  max-height: 70px;
+  width: auto;
+}
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: gold;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+}
+
+.close-btn {
+  display: none;
+}
+
+/* Active link color */
+.nav-page .active {
+  color: gold !important;
+  font-weight: bold;
+}
+
+
+
+
+.fancy-ramadan-logo {
+  text-align: center;
+  margin: 100px 0 30px 0;
+  position: relative;
+}
+
+.arabic-logo {
+  font-size: 80px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 20px rgba(255, 165, 0, 0.5);
+  display: inline-block;
+}
+
+/* Small stars around logo */
+.fancy-ramadan-logo::before,
+.fancy-ramadan-logo::after {
+  content: "🌙";
+  position: absolute;
+  font-size: 40px;
+  color: gold;
+}
+
+.fancy-ramadan-logo::before {
+  left: 20%;
+  top: -10px;
+}
+
+.fancy-ramadan-logo::after {
+  right: 20%;
+  top: -10px;
+}
+
+.ramadan-table-section {
+  padding: 50px 20px;
+}
+
+.ramadan-card {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow-x: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 5 Columns Layout */
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  align-items: center;
+}
+
+.table-header {
+  background: gold;
+  color: black;
+  font-weight: bold;
+  padding: 18px 10px;
+}
+
+.table-row {
+  padding: 18px 10px;
+  color: white;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.table-row:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.active-roza {
+  background: linear-gradient(90deg, gold, orange);
+  color: black;
+  font-weight: bold;
+  box-shadow: 0 0 15px gold;
+}
+
+/* DUAS SECTION */
+.ramadan-duas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+/* Individual Card */
+.dua-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  padding: 25px 20px;
+  max-width: 450px;
+  text-align: center;
+  flex: 1 1 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dua-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.6);
+}
+
+/* Dua Title */
+.dua-title {
+  font-size: 26px;
+  color: gold;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-shadow: 0 0 5px gold;
+}
+
+/* Dua Text */
+.dua-text {
+  word-spacing: 2px;
+  font-size: 30px;
+  color: white;
+  line-height: 1.6;
+  direction: rtl;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+  word-wrap: break-word;
+}
+
+.tasbeeh-section {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.tasbeeh-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  padding: 30px 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.tasbeeh-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: gold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px gold;
+}
+
+#tasbeeh-input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.tasbeeh-display {
+  margin-bottom: 20px;
+}
+
+#tasbeeh-name {
+  font-size: 22px;
+  color: white;
+  margin-bottom: 10px;
+  min-height: 28px;
+}
+
+#tasbeeh-count {
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tasbeeh-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.tasbeeh-buttons button {
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tasbeeh-buttons button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px gold;
+}
+
+.wall-clocks {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.clocks-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: gold;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px gold;
+}
+
+.clocks-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.clock-card {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+}
+
+.clock-card h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.clock-canvas {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto 10px auto;
+  background: radial-gradient(circle at center, #000000bb 60%, #00000088 100%);
+  background: url('./assets/khana-kaaba-and-masjid-e-nabawi_10568921.png!w700wp') no-repeat center center;
+  background-size: cover;
+}
+
+/* Time below clock */
+.clock-card p {
+  color: white;
+  font-size: 16px;
+  text-shadow: 0 0 3px gold;
+}
+
+.site-footer {
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #013220, #025c3a, #0a8f4f);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('./assets/stars.png') repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-content h3 {
+  font-size: 28px;
+  color: gold;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px gold;
+}
+
+.footer-content p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer-content .author-name {
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 0 5px #ffd700;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons .linkedin:hover {
+  color: #0A66C2;
+  transform: scale(1.2);
+}
+
+.social-icons .github:hover {
+  color: #181717;
+  transform: scale(1.2);
+}
+
+.social-icons .facebook:hover {
+  color: #1877F2;
+  transform: scale(1.2);
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .table-header,
+  .table-row {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .arabic-logo {
+    font-size: 50px;
+  }
+  
+  .fancy-ramadan-logo::before,
+  .fancy-ramadan-logo::after {
+    font-size: 25px;
+  }
+  .table-header,
+  .table-row {
+    font-size: 13px;
+    padding: 14px 6px;
+  }
+  .dua-title {
+    font-size: 24px;
+  }
+  
+  .dua-text {
+    font-size: 28px;
+  }
+  .tasbeeh-title {
+    font-size: 32px;
+  }
+  
+  #tasbeeh-input {
+    font-size: 16px;
+    padding: 8px;
+  }
+  
+  #tasbeeh-count {
+    font-size: 32px;
+  }
+  
+  .tasbeeh-buttons button {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+  .clocks-container {
+    grid-template-columns: 1fr;
+  }
+  .clock-canvas {
+    width: 130px;
+    height: 130px;
+  }
+  .footer-content h3 {
+    font-size: 24px;
+  }
+  
+  .footer-content p {
+    font-size: 14px;
+  }
+  
+  .social-icons a {
+    font-size: 18px;
+  }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 50%;
+    height: 50vh;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px 0 0 15px;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0;
+    transition: right 0.4s ease;
+    z-index: 20;
+  }
+  
+  /* Active state (open sidebar) */
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links a {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: gold;
+  }
+  
+  /* Hamburger button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 30;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+  }
+  
+  .nav-links .close-btn {
+    display: block;
+    align-self: flex-end;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 30px;
+  }
+  
+  /* Hover effect */
+  .nav-links .close-btn:hover {
+    color: gold;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .arabic-logo {
+    font-size: 38px;
+  }
+  
+  .fancy-ramadan-logo::before,
+  .fancy-ramadan-logo::after {
+    font-size: 18px;
+  }
+  .table-header,
+  .table-row {
+    font-size: 12px;
+    padding: 12px 4px;
+  }
+  .dua-title {
+    font-size: 20px;
+  }
+  
+  .dua-text {
+    font-size: 25px;
+  }
+  .tasbeeh-title {
+    font-size: 28px;
+  }
+  
+  #tasbeeh-input {
+    font-size: 14px;
+    padding: 6px;
+  }
+  
+  #tasbeeh-count {
+    font-size: 28px;
+  }
+  
+  .tasbeeh-buttons button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .clock-canvas {
+    width: 100px;
+    height: 100px;
+  }
+}
